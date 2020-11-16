@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTelemetry.Redis.API", "OpenTelemetry.Redis.API\OpenTelemetry.Redis.API.csproj", "{784DC467-DB94-4139-870A-A981F3B4F0FA}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTelemetry.Redis.ConsoleApp", "OpenTelemetry.Redis.ConsoleApp\OpenTelemetry.Redis.ConsoleApp.csproj", "{1DD0ED15-B696-489C-A70B-9A858204DCD3}"
 EndProject
 Global
