@@ -10,17 +10,18 @@ namespace OpenTelemetry.Redis.API.Controllers
     public class RedisController : ControllerBase
     {
         private readonly ILogger<RedisController> _logger;
+        private readonly IConnectionMultiplexer _connection;
 
-        public RedisController(ILogger<RedisController> logger)
+        public RedisController(ILogger<RedisController> logger, IConnectionMultiplexer connection)
         {
             _logger = logger;
+            _connection = connection;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            var conn = ConnectionMultiplexer.Connect("localhost:6379");
-            var redis = conn.GetDatabase();
+            var redis = _connection.GetDatabase();
 
             var msg = redis.StringGet("testKey01");
             _logger.LogInformation(msg);

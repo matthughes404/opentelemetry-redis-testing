@@ -26,6 +26,7 @@ namespace OpenTelemetry.Redis.API
             services.AddControllers();
 
             var connection = ConnectionMultiplexer.Connect("localhost:6379");
+            services.AddSingleton<IConnectionMultiplexer>(connection);
 
             services.AddOpenTelemetryTracing(builder => builder
                 .AddAspNetCoreInstrumentation()
